@@ -1,0 +1,18 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Main {
+    public static void main(String[] args) {
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Алина\\Desktop\\Protei\\chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+        driver.get("file:///C:/Users/Алина/Downloads/Telegram%20Desktop/qa-test.html");
+        WebElement input1 = driver.findElement(By.id("loginEmail"));
+        input1.sendKeys("test@protei.ru");
+        WebElement input2 = driver.findElement(By.id("loginPassword"));
+        input2.sendKeys("test");
+        WebElement button = driver.findElement(By.xpath("//*[text()='Вход']"));
+        button.click();
+    }
+}
